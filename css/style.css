@@ -1,0 +1,12 @@
+.thumb-img {
+    max-height: 200px;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.full-img {
+    max-width: 60%;
+    max-height: 500px;
+    display: block;
+    margin: auto;
+}

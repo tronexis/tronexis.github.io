@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.5.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>Image Gallery</h1>
+
+    <div class="container">
+        <div class="row" id="thumbs">
+            <div class="col"><img
+                    src="../_e3aae2289cfca9f1eed9fafbdb8c00ed_week_3_peer_update_Jan17/week_3_peer_update_Jan17/img_6.jpg"
+                    alt="" class="thumb-img" id="image1"></div>
+            <div class="col"><img
+                    src="../_e3aae2289cfca9f1eed9fafbdb8c00ed_week_3_peer_update_Jan17/week_3_peer_update_Jan17/img_7.jpg"
+                    alt="" class="thumb-img" id="image2"></div>
+            <div class="col"><img
+                    src="../_e3aae2289cfca9f1eed9fafbdb8c00ed_week_3_peer_update_Jan17/week_3_peer_update_Jan17/img_8.jpg"
+                    alt="" class="thumb-img" id="image3"></div>
+            <div class="col"><img
+                    src="../_e3aae2289cfca9f1eed9fafbdb8c00ed_week_3_peer_update_Jan17/week_3_peer_update_Jan17/img_9.jpg"
+                    alt="" class="thumb-img" id="image4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <button class="btn btn-primary" type="button" id="back">back</button>
+            <div class="col"><img
+                    src="../_e3aae2289cfca9f1eed9fafbdb8c00ed_week_3_peer_update_Jan17/week_3_peer_update_Jan17/img_6.jpg"
+                    alt="" class="full-img" id="slideshow"></div>
+            <button class="btn btn-primary" type="button" id="next">next</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var totalImages = $("#thumbs > .col").length;
+        var counter = 0;
+
+        $(".thumb-img").click(function () {
+            counter = Number($(this).attr("id").substr(5, 5)) - 1;
+            $("#slideshow").attr('src', $(this).attr('src'));
+        });
+
+        $("#back").click(function () {
+            counter = (totalImages + counter - 1) % 4;
+            $("#image" + (counter + 1)).click();
+        });
+
+        $("#next").click(function () {
+            counter = (counter + 1) % 4;
+            $("#image"+(counter+1)).click();
+        });
+
+        var paused = false;
+
+        window.setInterval(function () {
+        if(!paused) $("#next").click();
+        }, 2000);
+
+        $("#slideshow").hover(function(){
+            paused = !paused;
+        })
+
+        // console.log(numberOfImages);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+div.container>div.row#thumbs>div.col*4>img.thumb-img#image$[src=../_e3aae2289cfca9f1eed9fafbdb8c00ed_week_3_peer_update_Jan17/week_3_peer_update_Jan17/img_$@6.jpg]
+
+div.container>div.row>div.col>img.full-img#slideshow[src=../_e3aae2289cfca9f1eed9fafbdb8c00ed_week_3_peer_update_Jan17/week_3_peer_update_Jan17/img_9.jpg]

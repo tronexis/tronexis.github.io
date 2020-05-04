@@ -1,0 +1,4 @@
+$(selector).method(function(){...}) //jQuery syntax
+
+$(selector).click(function(){...}) //add click event
+$(selector).
